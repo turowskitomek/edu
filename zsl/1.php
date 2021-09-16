@@ -58,6 +58,34 @@ $name='Jagoda';
 echo "Imię: $name, nazwisko: Turowska <hr>";
 echo "Imię: \$name, nazwisko: Turowska <hr>";
 
+$x=10;
+$x++;
+echo $x;//11
+$x=$x++;
+echo $x;//11
+$y=$x++;
+echo $x;//12
+echo $y;//11
+
+echo "<hr>";
+
+$x="1";
+echo $x."<br>"; //1
+
+$x=$x++;
+echo $x."<br>"; //1
+
+$x=++$x;
+echo $x."<br>"; //2
+
+$y=++$x;
+echo $x." ";    //3
+echo $y."<br>"; //3
+
+$y=$x++;
+echo $x." ";    //4
+echo $y."<br>"; //3
+
 ?>
 
 </body>
