@@ -44,18 +44,3 @@ $lastYear = mktime(date('G'), date('i'), date('s'), date('m'), date('d'), date('
 $lastYear = $lastYear/(60*60*24*365);
 echo (int) $lastYear." lat<br>"; // 50
 ?>
-
-<form method="post">
-    Od<br>
-    <input type="date" name="fromdate"><br>
-    Do<br>
-    <input type="date" name="todate"><br>
-    <input type="submit" name="button" value="OK">
-</form>
-
-<?php
-    if(!empty($_POST['fromdate']) && !empty($_POST['todate'])){
-        $from = $_POST["fromdate"];
-        $to = $_POST["todate"];
-    }
-?>
