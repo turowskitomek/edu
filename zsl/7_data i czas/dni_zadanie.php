@@ -7,6 +7,7 @@
 </form>
 
 <?php
+if(isset($_POST["button"])){
     if(!empty($_POST['date1']) && !empty($_POST['date2'])){
         $date1 = explode("-", $_POST["date1"]);
         $date2 = explode("-", $_POST["date2"]);
@@ -24,8 +25,18 @@
             $date1 = $date2;
             $date2 = $help;
         }
+        $years = floor(($days1 - $days2)/(60*60*24*365));
+        $days = floor(($days1 - $days2)/(60*60*24));
         echo "Od: ".$date1[2].":".$date1[1].":".$date1[0]."<br>";
         echo "Do: ".$date2[2].":".$date2[1].":".$date2[0]."<br>";
-        echo "Różnica dni: ".round(($days1 - $days2)/(60*60*24), 0);
+        echo "Różnica dni: ".$days."<br><br>";
+
+        // $months = floor($days/30) - $years*12;
+        // $days = $days - ($years*12*30 + $months*30); 
+        // echo $years.", ".$months.", ".$days." (lata, miesiące, dni)";
     }
+    else{
+        echo "Data jest niepoprawna";
+    }
+}
 ?>
