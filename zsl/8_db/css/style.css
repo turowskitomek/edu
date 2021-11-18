@@ -1,0 +1,10 @@
+th, td{
+    border: solid 1px gray;
+    padding: 8px;
+    text-align: center;
+}
+
+th{
+    background-color: gray;
+    color: white;
+}
