@@ -26,7 +26,8 @@
 
     require_once "./connect.php";
 
-    $pass = password_hash($_POST["pass1"], PASSWORD_ARGON2ID);
+    $pass = password_hash($_POST["pass1"], PASSWORD_DEFAULT);
+    echo $pass;
     $stmt = $connect -> prepare("INSERT INTO user(name, surname, email, birthday, password, cityid) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt -> bind_param("sssssi", $_POST['name'], $_POST['surname'], $_POST['email1'], $_POST['birthday'], $pass, $_POST["city"]);
 
